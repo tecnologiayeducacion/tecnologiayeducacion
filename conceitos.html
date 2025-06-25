@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Extras - Taller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- El encabezado será inyectado por script.js -->
+    <div class="container">
+        <h2>Explora Conceptos e Ideas</h2>
+        <p class="intro-note">¡Adéntrate en la Web 3.0, Blockchain, Criptomonedas y Educación 5.0!</p>
+        <div class="tutorial-list">
+            <div class="tutorial-item">
+                <h3>De la Web 1.0 a la Web 3.0: Un Viaje Digital</h3>
+                <p>Descubre cómo ha evolucionado internet y qué ofrece la Web 3.0:</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/sample-web3" frameborder="0" allowfullscreen aria-label="Vídeo sobre la evolución de la Web 3.0"></iframe>
+            </div>
+            <div class="tutorial-item">
+                <h3>Blockchain Descomplicado</h3>
+                <p>Entiende qué es la tecnología Blockchain de forma sencilla:</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/sample-blockchain" frameborder="0" allowfullscreen aria-label="Vídeo sobre la tecnología Blockchain"></iframe>
+            </div>
+            <div class="tutorial-item">
+                <h3>El Poder de la Blockchain: Posibilidades Infinitas</h3>
+                <p>Ve cómo la Blockchain puede transformar el futuro:</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/sample-blockchain-possibilities" frameborder="0" allowfullscreen aria-label="Vídeo sobre posibilidades de la Blockchain"></iframe>
+            </div>
+            <div class="tutorial-item">
+                <h3>Conociendo el Mundo de las Criptomonedas</h3>
+                <p>Explora el universo de las monedas digitales y carteras como Binance:</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/sample-crypto" frameborder="0" allowfullscreen aria-label="Vídeo sobre criptomonedas y carteras"></iframe>
+            </div>
+            <div class="tutorial-item">
+                <h3>Educación 5.0: Aprendizaje para el Futuro</h3>
+                <p>Sabe por qué la Educación 5.0 es esencial hoy:</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/sample-edu50" frameborder="0" allowfullscreen aria-label="Vídeo sobre Educación 5.0"></iframe>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn back-btn" role="button" tabindex="0" aria-label="Volver a la página inicial">↩ Volver</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- Botón de Accesibilidad con Emoticon ♿ en la esquina superior derecha -->
+    <button class="accessibility-btn" aria-label="Abrir menú de accesibilidad" onclick="toggleAccessibilityMenu()">♿</button>
+    <!-- Menú de Accesibilidad con Activar/Desactivar -->
+    <div class="accessibility-menu" id="accessibility-menu">
+        <ul>
+            <li><button onclick="toggleAccessibility('high-contrast', this)">Alto Contraste (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('large-text', this)">Fuente Legible (Activar/Desactivar)</button></li>
+            <li><button onclick="increaseFontSize()">Aumentar Letra</button></li>
+            <li><button onclick="decreaseFontSize()">Disminuir Letra</button></li>
+            <li><button onclick="toggleAccessibility('distraction-free', this)">Quitar Distracciones (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('text-to-speech', this)">Lectura en Voz Alta (Activar/Desactivar)</button></li>
+        </ul>
+    </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>¡Explora, crea y aprende con el Taller Tecnología y Educación 5.0 – Conectando innovación y conocimiento! | Desarrollado por el grupo de intercambio Move La América | 
+            <img src="logofacucol.png" alt="Logo FACUCOL" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            <img src="logo-iftm.png" alt="Logo IFTM" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            Contacto: <a href="mailto:tecnologiayeducacion5@gmail.com">tecnologiayeducacion5@gmail.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probador de Archivo - Taller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- El encabezado será inyectado por script.js -->
+    <div class="container">
+        <h2>Prueba tu Archivo</h2>
+        <p>¡Sube tu archivo aquí para ver si está listo para el NFT!</p>
+        <label for="fileInput" class="file-label" aria-label="Elegir archivo para probar">
+            <img src="icon-upload.png" alt="Ícono de subida" class="upload-icon"> Elegir Archivo
+        </label>
+        <input type="file" id="fileInput" accept=".mp3,.wav,.png,.jpg,.jpeg,.mp4,.webm" onchange="checkFile()">
+        <div id="fileFeedback" aria-live="polite"></div>
+        <button class="btn clear-btn" onclick="location.reload()" aria-label="Limpiar contenido y recargar la página" role="button">🗑️ Limpiar Contenido</button>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn back-btn" role="button" tabindex="0" aria-label="Volver a la página inicial">↩ Volver</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91b7122f38abbcde',t:'MTc0MTE1MTA1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <!-- Botón de Accesibilidad con Emoticon ♿ en la esquina superior derecha -->
+    <button class="accessibility-btn" aria-label="Abrir menú de accesibilidad" onclick="toggleAccessibilityMenu()">♿</button>
+    <!-- Menú de Accesibilidad con Activar/Desactivar -->
+    <div class="accessibility-menu" id="accessibility-menu">
+        <ul>
+            <li><button onclick="toggleAccessibility('high-contrast', this)">Alto Contraste (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('large-text', this)">Fuente Legible (Activar/Desactivar)</button></li>
+            <li><button onclick="increaseFontSize()">Aumentar Letra</button></li>
+            <li><button onclick="decreaseFontSize()">Disminuir Letra</button></li>
+            <li><button onclick="toggleAccessibility('distraction-free', this)">Quitar Distracciones (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('text-to-speech', this)">Lectura en Voz Alta (Activar/Desactivar)</button></li>
+        </ul>
+    </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>¡Explora, crea y aprende con el Taller Tecnología y Educación 5.0 – Conectando innovación y conocimiento! | Desarrollado por el grupo de intercambio Move La América | 
+            <img src="logofacucol.png" alt="Logo FACUCOL" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            <img src="logo-iftm.png" alt="Logo IFTM" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            Contacto: <a href="mailto:tecnologiayeducacion5@gmail.com">tecnologiayeducacion5@gmail.com</a></p>
+    </footer>
+</body>
+</html>

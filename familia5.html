@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família 5.0 – Juntos Pelo Dia a Dia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        canvas { display: block; margin: 20px auto; border: 2px solid #f97316; border-radius: 8px; }
+        .level-select { margin: 10px 0; }
+        .level-btn { background: #5b21b6; margin: 5px; }
+        .level-btn:hover { background: #7c3aed; }
+        .problem-popup { position: absolute; background: rgba(30, 41, 59, 0.95); padding: 15px; border-radius: 8px; color: #fff; font-size: 1.2em; display: none; z-index: 10; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Família 5.0 – Juntos Pelo Dia a Dia</h2>
+        <p>Acompanhe Aline e seu shih tzu cinza, Cookie, enquanto encontram Aninha, Giu, Lucas e Davi pra enfrentar os desafios do cotidiano com as habilidades da Educação 5.0! Cada um traz uma *soft skill* e um superpoder tecnológico pra superar obstáculos reais.</p>
+        <div class="level-select">
+            <button class="btn level-btn" onclick="startLevel(1)">Fase 1: Aline Sozinha</button>
+            <button class="btn level-btn" onclick="startLevel(2)">Fase 2: Encontro com Aninha</button>
+            <button class="btn level-btn" onclick="startLevel(3)">Fase 3: Giu se Junta</button>
+            <button class="btn level-btn" onclick="startLevel(4)">Fase 4: Lucas Chega</button>
+            <button class="btn level-btn" onclick="startLevel(5)">Fase 5: Davi Completa</button>
+            <button class="btn level-btn" onclick="startLevel(6)">Fase 6: Missão Final</button>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <nav class="nav-buttons">
+            <a href="explorador5.html" class="btn" role="button" tabindex="0" aria-label="Explore o Explorador 5.0">🔍 Explorador 5.0</a>
+            <a href="index.html" class="back-btn" role="button" tabindex="0" aria-label="Voltar ao início">⬅ Voltar ao Início</a>
+        </nav>
+    </div>
+    <script src="https://unpkg.com/kaboom@2000.2.9/dist/kaboom.js"></script>
+    <script src="script.js"></script>
+    <script>
+        kaboom({
+            width: 800,
+            height: 600,
+            canvas: document.getElementById("gameCanvas"),
+            background: [50, 50, 100],
+        });
+
+        // Sprites válidos do Kaboom.js (testados)
+        loadSprite("aline", "https://kaboomjs.com/sprites/bean.png"); // Aline
+        loadSprite("cookie", "https://kaboomjs.com/sprites/spike.png"); // Cookie (substituindo turtle por spike)
+        loadSprite("aninha", "https://kaboomjs.com/sprites/emiko.png"); // Aninha
+        loadSprite("giu", "https://kaboomjs.com/sprites/guy.png"); // Giu
+        loadSprite("lucas", "https://kaboomjs.com/sprites/mark.png"); // Lucas
+        loadSprite("davi", "https://kaboomjs.com/sprites/bob.png"); // Davi
+        loadSprite("problem", "https://kaboomjs.com/sprites/ghosty.png"); // Obstáculo
+        loadSprite("ia", "https://kaboomjs.com/sprites/coin.png"); // Power-up IA
+
+        let team = ["aline"]; // Começa com Aline
+        let currentLevel = 1;
+
+        function startLevel(level) {
+            currentLevel = level;
+            scene("game", () => {
+                gravity(1200);
+
+                // Mapa básico
+                const map = addLevel([
+                    "                           ",
+                    "         =====            ",
+                    "    p               p     ",
+                    "=====        ====     ====",
+                    "     ====                 ",
+                    "                           ",
+                ], {
+                    width: 40,
+                    height: 40,
+                    "=": () => [rect(40, 40), area(), solid(), "ground"],
+                    "p": () => [sprite("problem"), area(), "problem", { desc: level === 1 ? "Falta de Tempo" : level === 2 ? "Distrações" : level === 3 ? "Tarefa Difícil" : level === 4 ? "Conflito" : level === 5 ? "Desânimo" : "Missão Final" }],
+                });
+
+                // Jogador (Aline com Cookie)
+                const player = add([
+                    sprite("aline"),
+                    pos(50, 0),
+                    body(),
+                    area(),
+                    "player"
+                ]);
+                const cookie = add([
+                    sprite("cookie"),
+                    pos(70, 0),
+                    body(),
+                    area(),
+                    follow(player, vec2(-20, 0)),
+                    "cookie"
+                ]);
+
+                // Controles
+                onKeyDown("left", () => player.move(-120, 0));
+                onKeyDown("right", () => player.move(120, 0));
+                onKeyPress("space", () => { if (player.isGrounded()) player.jump(400); });
+
+                // Adicionar equipe conforme o nível
+                if (level >= 2) team.push("aninha");
+                if (level >= 3) team.push("giu");
+                if (level >= 4) team.push("lucas");
+                if (level >= 5) team.push("davi");
+
+                team.forEach((member, i) => {
+                    if (member !== "aline") {
+                        add([sprite(member), pos(50 + i * 50, 0), body(), area(), follow(player, vec2(i * 50, 0))]);
+                    }
+                });
+
+                // Obstáculos com popup
+                onCollide("player", "problem", (p, prob) => {
+                    const popup = add([
+                        rect(300, 100),
+                        pos(prob.pos.x - 50, prob.pos.y - 120),
+                        color(30, 41, 59),
+                        "problem-popup"
+                    ]);
+                    add([
+                        text(prob.desc, { size: 20 }),
+                        pos(prob.pos.x - 40, prob.pos.y - 110),
+                        color(255, 255, 255),
+                        "problem-popup"
+                    ]);
+                    wait(2, () => destroyAll("problem-popup"));
+                });
+
+                // Power-up (IA pra Aline)
+                const power = add([
+                    sprite("ia"),
+                    pos(300, 400),
+                    area(),
+                    "power"
+                ]);
+                onCollide("player", "power", (p, pow) => {
+                    destroy(pow);
+                    alert("Aline ganhou IA! Use criatividade pra criar soluções!");
+                });
+
+                // Fim da fase
+                player.onCollide("ground", (g) => {
+                    if (player.pos.x > 700) {
+                        alert(`Fase ${level} concluída! ${team.length > 1 && level < 6 ? team[team.length - 1] + " se juntou!" : "Missão Final Completa!"}`);
+                        go("game"); // Reinicia pra próxima fase (simplificado)
+                    }
+                });
+            });
+            go("game");
+        }
+    </script>
+    <footer>
+        <p>Desenvolvido pela Equipe Santos | Contato: <a href="mailto:tecnologiaeeducacao@gmail.com">tecnologiaeeducacao@gmail.com</a></p>
+    </footer>
+</body>
+</html>

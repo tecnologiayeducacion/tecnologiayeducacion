@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Inteligencias - Taller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- El encabezado será inyectado por script.js -->
+    <div class="container">
+        <div class="intro" id="intro">
+            <p>¡Aquí descubrirás tus inteligencias múltiples para crear tu NFT!</p>
+            <h2>¿Cuáles son las inteligencias? (Según Gardner)</h2>
+            <ul class="inteligencias-list">
+                <li><img src="icon-linguistica.png" alt="Ícono de globo de diálogo" class="intel-icon"><span><strong>Lingüística</strong> – Habilidad con palabras, escritura y comunicación.</span></li>
+                <li><img src="icon-logica.png" alt="Ícono de ábaco" class="intel-icon"><span><strong>Lógico-Matemática</strong> – Facilidad con números, lógica y razonamiento.</span></li>
+                <li><img src="icon-espacial.png" alt="Ícono de paleta" class="intel-icon"><span><strong>Espacial</strong> – Percepción visual y pensamiento en imágenes.</span></li>
+                <li><img src="icon-corporal.png" alt="Ícono de figura corriendo" class="intel-icon"><span><strong>Corporal-Cinestésica</strong> – Coordinación y aprendizaje por el movimiento.</span></li>
+                <li><img src="icon-musical.png" alt="Ícono de nota musical" class="intel-icon"><span><strong>Musical</strong> – Sensibilidad para sonidos, ritmos y melodías.</span></li>
+                <li><img src="icon-interpessoal.png" alt="Ícono de manos saludándose" class="intel-icon"><span><strong>Interpessoal</strong> – Facilidad para entender e interactuar con personas.</span></li>
+                <li><img src="icon-intrapessoal.png" alt="Ícono de rostro pensando" class="intel-icon"><span><strong>Intrapersonal</strong> – Autoconocimiento y reflexión.</span></li>
+                <li><img src="icon-naturalista.png" alt="Ícono de brote de planta" class="intel-icon"><span><strong>Naturalista</strong> – Conexión con la naturaleza y patrones.</span></li>
+            </ul>
+            <button onclick="startQuiz()" class="btn back-btn" aria-label="Iniciar la prueba de inteligencias">🎮 Iniciar Prueba</button>
+            <a href="sobre-gardner.html" class="btn back-btn" role="button" tabindex="0">📖 Aprende Más sobre Gardner</a>
+            <a href="index.html" class="btn back-btn" role="button" tabindex="0" aria-label="Volver a la página inicial">↩ Volver</a>
+        </div>
+        
+        <div class="quiz" id="quiz-section" style="display: none;">
+            <h2>🎲 Prueba de Inteligencias</h2>
+            <p>Responde con 'Nunca' (1), 'A veces' (3) o 'Siempre' (5):</p>
+            <div id="quiz-questions"></div>
+            <button onclick="submitQuiz()" class="btn back-btn" aria-label="Ver resultados de la prueba">🎯 Ver Resultado</button>
+        </div>
+        
+        <div class="result" id="result-section" style="display: none;">
+            <h2>🏆 Tu Perfil de Inteligencias</h2>
+            <canvas id="resultsChart" role="img" aria-label="Gráfico de los resultados de la prueba de inteligencias"></canvas>
+            <div id="quiz-result" aria-live="polite"></div>
+            <div class="result-buttons">
+                <button onclick="shareResults()" class="share-btn" aria-label="Compartir mis resultados">📤 Compartir</button>
+                <a href="index.html" class="btn back-btn" role="button" tabindex="0">↩ Volver</a>
+            </div>
+            <a href="criar-nft.html" class="btn" role="button" tabindex="0" aria-label="Ir al Paso 2 - Crear NFT">🎨 Paso 2 - Crear NFT</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91b7122f29ed7ba6',t:'MTc0MTE1MTA1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <!-- Botón de Accesibilidad con Emoticon ♿ en la esquina superior derecha -->
+    <button class="accessibility-btn" aria-label="Abrir menú de accesibilidad" onclick="toggleAccessibilityMenu()">♿</button>
+    <!-- Menú de Accesibilidad con Activar/Desactivar -->
+    <div class="accessibility-menu" id="accessibility-menu">
+        <ul>
+            <li><button onclick="toggleAccessibility('high-contrast', this)">Alto Contraste (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('large-text', this)">Fuente Legible (Activar/Desactivar)</button></li>
+            <li><button onclick="increaseFontSize()">Aumentar Letra</button></li>
+            <li><button onclick="decreaseFontSize()">Disminuir Letra</button></li>
+            <li><button onclick="toggleAccessibility('distraction-free', this)">Quitar Distracciones (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('text-to-speech', this)">Lectura en Voz Alta (Activar/Desactivar)</button></li>
+        </ul>
+    </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>¡Explora, crea y aprende con el Taller Tecnología y Educación 5.0 – Conectando innovación y conocimiento! | Desarrollado por el grupo de intercambio Move La América | 
+            <img src="logofacucol.png" alt="Logo FACUCOL" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            <img src="logo-iftm.png" alt="Logo IFTM" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            Contacto: <a href="mailto:tecnologiayeducacion5@gmail.com">tecnologiayeducacion5@gmail.com</a></p>
+    </footer>
+</body>
+</html>

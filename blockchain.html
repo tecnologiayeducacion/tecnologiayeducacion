@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain: Tecnología, Aplicaciones y Desafíos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Blockchain: Tecnología, Aplicaciones y Desafíos para el Bien Común</h2>
+        <p>La tecnología blockchain, creada en 1991 por Stuart Haber y W. Scott Stornetta, es un sistema de registro digital seguro, inmutable y descentralizado. Así como la humanidad aprendió a controlar el fuego para el bien común, el blockchain ofrece un potencial transformador en la era digital – con beneficios prometedores y desafíos por superar. Esta página presenta su concepto, historia, usos e impactos, de forma sencilla y accesible, inspirada en el artículo <em>Blockchain: Tecnología, Aplicaciones y Desafíos para el Bien Común</em>, publicado en la revista <em>Querubim</em> (<a href="https://periodicos.uff.br/querubim/issue/view/3103/1026" target="_blank">mira aquí</a>).</p>
+
+        <h3>¿Qué es Blockchain?</h3>
+        <p>Blockchain es una "cadena de bloques" – una colección de datos organizada en bloques interconectados, como carpetas que guardan documentos. Cada bloque contiene un resumen (hash) del anterior, formando una cadena inmutable. Si alguien intenta cambiar un bloque, los otros denuncian la violación. Estos bloques son validados y almacenados por una red descentralizada de computadoras (nodos), garantizando seguridad y transparencia sin depender de una autoridad central.</p>
+        <ul>
+            <li><strong>Descentralización:</strong> No hay un solo controlador; todos tienen una copia.</li>
+            <li><strong>Inmutabilidad:</strong> Los datos no pueden ser cambiados después de registrados.</li>
+            <li><strong>Criptografía:</strong> Los hash (ej.: SHA-256) sellan los bloques como huellas digitales.</li>
+        </ul>
+
+        <h3>Historia del Blockchain</h3>
+        <p>El blockchain no nació con el Bitcoin. En 1979, Ralph Merkle creó los árboles de Merkle, permitiendo verificar datos de forma eficiente. En 1982, David Chaum introdujo las firmas ciegas, esenciales para transacciones seguras. En 1991, Haber y Stornetta, en Xerox, desarrollaron el timestamping para proteger documentos digitales, uniendo estas ideas en lo que hoy llamamos blockchain. En 2008, Satoshi Nakamoto popularizó la tecnología con el Bitcoin, pero sus raíces son más profundas.</p>
+
+        <h3>¿Cómo Funciona?</h3>
+        <p>Cuando se crea un dato (ej.: una transacción), es validado por nodos de la red – computadoras comunes o servidores en internet. Después de la validación (minería), el dato entra en un bloque, se sella con un hash y se conecta al bloque anterior. Estos bloques quedan públicos en la red, pero solo quien tiene el token (clave) accede al contenido completo. Esto garantiza seguridad, incluso estando disponible para todos.</p>
+
+        <h3>Aplicaciones del Blockchain</h3>
+        <p>El blockchain va más allá de las finanzas:</p>
+        <ul>
+            <li><strong>Criptomonedas:</strong> Bitcoin, Ethereum y otras eliminan intermediarios financieros.</li>
+            <li><strong>Educación:</strong> Certificados inmutables (ej.: MIT Blockcerts) e incentivos vía tokens.</li>
+            <li><strong>Salud:</strong> Registros médicos seguros y accesibles.</li>
+            <li><strong>Bien Común:</strong> La JICA usó blockchain en Costa de Marfil para combatir el trabajo infantil, premiando a agricultores cuyos hijos iban a la escuela.</li>
+            <li><strong>Cartorios:</strong> Registros transparentes y baratos, reduciendo fraudes como los vistos en Río de Janeiro en 2007.</li>
+        </ul>
+
+        <h3>Beneficios</h3>
+        <ul>
+            <li><strong>Seguridad:</strong> Protección contra fraudes y crackers.</li>
+            <li><strong>Transparencia:</strong> Todos pueden verificar los registros.</li>
+            <li><strong>Eficiencia:</strong> Menos burocracia y costos.</li>
+            <li><strong>Inclusión:</strong> Acceso global a servicios digitales.</li>
+        </ul>
+
+        <h3>Desafíos</h3>
+        <p>El blockchain enfrenta obstáculos:</p>
+        <ul>
+            <li><strong>Escalabilidad:</strong> El "Trilema" (descentralización, seguridad, velocidad) dificulta su uso a gran escala.</li>
+            <li><strong>Energía:</strong> La minería consume mucho (ej.: Bitcoin usa 204,5 TWh/año).</li>
+            <li><strong>Regulación:</strong> Falta de leyes claras limita su adopción.</li>
+            <li><strong>Conocimiento:</strong> Pocas personas entienden su potencial, generando resistencia.</li>
+        </ul>
+
+        <h3>¿Por Qué Importa?</h3>
+        <p>El blockchain es una herramienta de código abierto para un mundo más justo. Puede combatir desigualdades, proteger datos y fomentar el bien común – pero requiere educación y políticas para florecer. ¿Quieres explorar sus posibilidades?</p>
+
+        <nav class="nav-buttons">
+            <a href="explorador-blockchain.html" class="btn" role="button" tabindex="0" aria-label="Explora las posibilidades del Blockchain">🔗 Explorador Blockchain</a>
+            <a href="index.html" class="back-btn" role="button" tabindex="0" aria-label="Volver al inicio">⬅ Volver al Inicio</a>
+        </nav>
+    </div>
+
+    <!-- Botón de Accesibilidad -->
+    <button class="accessibility-btn" aria-label="Abrir menú de accesibilidad" onclick="toggleAccessibilityMenu()">♿</button>
+    <div class="accessibility-menu" id="accessibility-menu">
+        <ul>
+            <li><button onclick="toggleAccessibility('high-contrast', this)">Alto Contraste (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('large-text', this)">Fuente Legible (Activar/Desactivar)</button></li>
+            <li><button onclick="increaseFontSize()">Aumentar Letra</button></li>
+            <li><button onclick="decreaseFontSize()">Disminuir Letra</button></li>
+            <li><button onclick="toggleAccessibility('distraction-free', this)">Quitar Distracciones (Activar/Desactivar)</button></li>
+            <li><button onclick="toggleAccessibility('text-to-speech', this)">Lectura en Voz Alta (Activar/Desactivar)</button></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>¡Explora, crea y aprende con el Taller Tecnología y Educación 5.0 – Conectando innovación y conocimiento! | Desarrollado por el grupo de intercambio Move La América | 
+            <img src="logofacucol.png" alt="Logo FACUCOL" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            <img src="logo-iftm.png" alt="Logo IFTM" class="footer-logo" style="width: 80px; height: auto; margin: 0 10px;">
+            Contacto: <a href="mailto:tecnologiayeducacion5@gmail.com">tecnologiayeducacion5@gmail.com</a></p>
+    </footer>
+</body>
+</html>
