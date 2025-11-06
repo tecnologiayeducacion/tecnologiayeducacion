@@ -3,44 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller Tecnología y Educación 5.0</title>
+    <title>Sobre el Proyecto - Taller Tecnología y Educación 5.0</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- El encabezado será inyectado por script.js -->
     <div class="container">
-        <img src="banner-workshop.png" alt="Banner del Taller Tecnología y Educación 5.0" class="banner">
-        <p>Sigue los pasos de abajo para crear y mintear tu propio NFT!</p>
-        <nav class="steps-nav">
-            <a href="teste.html" class="btn step-btn" role="button" tabindex="0" aria-label="Paso 1: Haz el test de inteligencias">🎮 Paso 1: Test de Inteligencias</a>
-            <a href="criar-nft.html" class="btn step-btn" role="button" tabindex="0" aria-label="Paso 2: Crea tu NFT">🎨 Paso 2: Crear NFT</a>
-            <a href="tutoriais.html" class="btn step-btn" role="button" tabindex="0" aria-label="Paso 3: Tutoriales para transformar tu arte en NFT">📹 Paso 3: Tutoriales de Minting</a>
-            <a href="testador.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Prueba tu archivo para NFT">📎 Probador de Archivo</a>
-            <a href="#" class="btn extra-btn" role="button" tabindex="0" aria-label="Explora opciones extras" onclick="toggleExtras(event)">📂 Extras</a>
-            <div id="extras-menu" style="display: none; margin-top: 10px;">
-                <a href="conceitos.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Explora conceptos extras">📚 Conceptos Extras</a>
-                <a href="educacao5.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Sabe más sobre Educación 5.0">🧠 Educación 5.0</a>
-                <a href="blockchain.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Descubre qué es Blockchain">⛓️ Blockchain</a>
-                <a href="glossario.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Consulta el glosario de términos">📖 Glosario</a>
-                <a href="sobre.html" class="btn extra-btn" role="button" tabindex="0" aria-label="Conoce más sobre el proyecto">👨‍🏫 Sobre el Proyecto</a>
-            </div>
-        </nav>
+        <h1>Sobre el Proyecto</h1>
+        <img src="danilo-weller.PNG" alt="Profesores Danilo Torres y Weller Santos Gonçalves" class="project-image" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 20px auto; border-radius: 8px;">
+        <p>Este proyecto fue idealizado por los profesores Danilo Torres, de la Universidad Autónoma del Caribe, y Weller Santos Gonçalves, de la Prefeitura Municipal de Uberlândia y investigador del Instituto Federal del Triángulo Mineiro. Nuestro objetivo principal es preparar a los jóvenes brasileños y colombianos para que descubran sus múltiples inteligencias, fomenten el desarrollo de sus habilidades mediante la Educación 5.0 y exploren las vastas oportunidades que brinda la tecnología blockchain.</p>
+        <p>Desde la creación y gestión de carteras digitales como MetaMask y Binance, hasta la mintación de NFTs en plataformas de cryptoarte como OpenSea, buscamos democratizar el acceso a estos conocimientos. Todo esto se ofrece de forma completamente gratuita, con el fin de empoderar a nuestros estudiantes en un mundo cada vez más conectado e innovador.</p>
+        <p>¡Únete a esta iniciativa para transformar el futuro de la educación y la tecnología!</p>
     </div>
     <script src="script.js"></script>
     <script>
-        function toggleExtras(event) {
-            event.preventDefault();
-            const menu = document.getElementById('extras-menu');
-            const button = event.target;
-            if (menu.style.display === 'none') {
-                menu.style.display = 'block';
-                button.innerHTML = '📂 Extras <span style="font-size: 0.8em;">▼</span>';
-            } else {
-                menu.style.display = 'none';
-                button.innerHTML = '📂 Extras <span style="font-size: 0.8em;">▶</span>';
-            }
-        }
-
         // Desactiva temporalmente el script de Cloudflare para pruebas locales
         if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
             console.log("Desactivando script de Cloudflare para ambiente local.");

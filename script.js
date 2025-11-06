@@ -9,16 +9,16 @@ function injectHeader() {
                 <h1><a href="index.html" style="color: inherit; text-decoration: none;">Tecnología y Educación 5.0</a></h1>
                 <nav class="nav-menu" id="nav-menu">
                     <a href="index.html">Inicio</a>
-                    <a href="diagnostico.html">Formulario Diagnóstico</a>
                     <a href="teste.html">Prueba de Inteligencias</a>
                     <a href="criar-nft.html">Crear NFT</a>
                     <a href="tutoriais.html">Tutoriales de Minting</a>
-                    <a href="final.html">Formulario Final</a>
                     <a href="testador.html">Probador de Archivo</a>
                     <a href="conceitos.html">Videos Extras</a>
                     <a href="educacao5.html">Descubre qué es Educación 5.0</a>
+                    <a href="binance.html">Descubre qué es Binance</a>
                     <a href="blockchain.html">Descubre qué es Blockchain</a>
                     <a href="glossario.html">Glosario</a>
+                    <a href="sobre.html">Sobre el Proyecto</a>
                 </nav>
             </div>
         `;
